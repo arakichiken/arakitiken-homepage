@@ -3,182 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>荒木地建｜佐世保市の賃貸・不動産情報</title>
-<meta name="description" content="荒木地建の公式サイト。長崎県立大学周辺の学生向けアパート・賃貸物件を多数掲載。">
-
+<title>荒木地建｜佐世保市 不動産仲介</title>
 <style>
-body{margin:0;font-family:system-ui;background:#f5f6f8}
-header{background:#7c5cff;color:#fff;padding:20px}
-header h1{margin:0;font-size:30px}
-header p{margin:6px 0 0;font-size:14px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f6f8}
+header{background:#4f46e5;color:#fff;padding:20px}
+header h1{margin:0;font-size:28px}
+header p{margin:5px 0 0;font-size:14px}
 .container{max-width:1000px;margin:auto;padding:16px}
-h2{margin-top:30px}
-
-.controls button{
-  margin:4px;padding:8px 14px;border:none;border-radius:8px;
-  background:#e5e7eb;cursor:pointer
-}
-
-.apartment{
-  background:#fff;border-radius:14px;padding:14px;margin-bottom:14px;
-  box-shadow:0 6px 20px rgba(0,0,0,.05);
-  transition:.2s;cursor:pointer
-}
-.apartment.full{opacity:.45;filter:grayscale(70%)}
-
-.badge{
-  padding:2px 10px;border-radius:999px;font-size:12px;color:#fff
-}
-.open{background:#22c55e}
-.full-badge{background:#ef4444}
-
-.appeal{font-size:13px;color:#334155}
-
-.visit{
-  display:inline-block;margin-top:8px;
-  background:#2563eb;color:#fff;text-decoration:none;
-  padding:6px 12px;border-radius:8px;font-size:13px
-}
-.hidden{display:none}
+.section{background:#fff;border-radius:14px;padding:18px;margin-top:18px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
+.section h2{margin-top:0}
+.news li{margin-bottom:6px}
+.property{display:flex;gap:14px;padding:12px;border-bottom:1px solid #e5e7eb}
+.property:last-child{border-bottom:none}
+.property img{width:120px;height:90px;object-fit:cover;border-radius:8px}
+.badge{padding:3px 10px;border-radius:999px;font-size:12px;color:#fff}
+.open{background:#16a34a}
+.full{background:#dc2626}
+.property.full-state{opacity:.45;filter:grayscale(60%)}
+.btn{display:inline-block;margin-top:6px;background:#2563eb;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-size:13px}
+footer{text-align:center;font-size:12px;color:#64748b;padding:20px}
 </style>
 </head>
-
 <body>
-
 <header>
-  <h1>荒木地建</h1>
-  <p>長崎県佐世保市｜不動産仲介業</p>
+<h1>荒木地建</h1>
+<p>長崎県佐世保市｜不動産仲介業</p>
 </header>
 
 <div class="container">
-<h2>学生向けアパート一覧</h2>
 
-<div class="controls">
-  <button onclick="sortRent()">家賃順</button>
-  <button onclick="sortDistance()">大学までの距離順</button>
-</div>
+<section class="section">
+<h2>会社概要</h2>
+<p>荒木地建は、長崎県佐世保市を拠点に学生向けアパートを中心とした不動産仲介・管理を行っています。<br>
+長崎県立大学の学生様に安心・安全な住まいを提供します。</p>
+<img src="ishidai.jpg" alt="会社イメージ" style="width:100%;border-radius:12px;margin-top:10px">
+</section>
 
-<div id="list">
+<section class="section" id="news">
+<h2>新着情報</h2>
+<ul class="news">
+<li>2025.03.01 ホームページを公開しました</li>
+<li>2025.03.01 春入学向け物件募集中</li>
+<li>2025.02.20 内覧予約受付中</li>
+</ul>
+</section>
 
-<!-- ===== プランドール ===== -->
-<div class="apartment" data-rent="50000" data-distance="0" onclick="toggle(this)">
-<h3>プランドール壱番館 <span class="badge open">募集中</span></h3>
-<p>佐世保市上相浦町5-23｜全6戸</p>
-<p class="appeal">専用ゴミ捨て場／指定袋不要／二重サッシ／鍵新品</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市上相浦町5-23" target="_blank">内覧可能</a>
-</div>
+<section class="section">
+<h2>学生向け物件一覧</h2>
 
-<div class="apartment" data-rent="50000" data-distance="8" onclick="toggle(this)">
-<h3>プランドール弐番館 <span class="badge open">募集中</span></h3>
-<p>佐世保市川下町229-1｜徒歩8分</p>
-<p class="appeal">1階管理会社／女性専用階／鍵新品</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市川下町229-1" target="_blank">内覧可能</a>
-</div>
-
-<div class="apartment" data-rent="50000" data-distance="16" onclick="toggle(this)">
-<h3>プランドール参番館 <span class="badge open">募集中</span></h3>
-<p>佐世保市新田町67-49｜徒歩16分</p>
-<p class="appeal">オートロック／全室角部屋／WIC</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市新田町67-49" target="_blank">内覧可能</a>
-</div>
-
-<!-- ===== ノースリバー ===== -->
-<div class="apartment" data-rent="35000" data-distance="14" onclick="toggle(this)">
-<h3>ノースリバー <span class="badge open">募集中</span></h3>
-<p>佐世保市相浦町288-1｜徒歩14分</p>
-<p class="appeal">駐車場付き／臨時駐車場あり／鍵新品</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市相浦町288-1" target="_blank">内覧可能</a>
-</div>
-
-<!-- ===== カーサ ===== -->
-<div class="apartment" data-rent="32000" data-distance="12" onclick="toggle(this)">
-<h3>カーサシティⅠ <span class="badge open">募集中</span></h3>
-<p>佐世保市大潟町142-2｜徒歩12分</p>
-<p class="appeal">宅配BOX／コインランドリー／新品カーテン</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市大潟町142-2" target="_blank">内覧可能</a>
-</div>
-
-<div class="apartment" data-rent="33000" data-distance="11" onclick="toggle(this)">
-<h3>カーサシティⅡ <span class="badge open">募集中</span></h3>
-<p>佐世保市大潟町250-1｜徒歩11分</p>
-<p class="appeal">設備はⅠと同じ／家賃重視</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市大潟町250-1" target="_blank">内覧可能</a>
-</div>
-
-<!-- ===== その他 ===== -->
-<div class="apartment" data-rent="32000" data-distance="6" onclick="toggle(this)">
-<h3>ヴィラ朝日ヶ丘 <span class="badge open">募集中</span></h3>
-<p>佐世保市大潟町60-136｜徒歩6分</p>
-<p class="appeal">家主隣接／防犯安心</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市大潟町60-136" target="_blank">内覧可能</a>
-</div>
-
-<div class="apartment" data-rent="30000" data-distance="16" onclick="toggle(this)">
-<h3>コーププリメイラ <span class="badge open">募集中</span></h3>
-<p>佐世保市大潟町730-12｜徒歩16分</p>
-<p class="appeal">水道代込／新品家電／防犯カメラ</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市大潟町730-12" target="_blank">内覧可能</a>
-</div>
-
-<div class="apartment" data-rent="28000" data-distance="7" onclick="toggle(this)">
-<h3>スチューデントハウス <span class="badge open">募集中</span></h3>
-<p>佐世保市大潟町60-79｜徒歩7分</p>
-<p class="appeal">新品家電フルセット</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市大潟町60-79" target="_blank">内覧可能</a>
-</div>
-
-<div class="apartment" data-rent="45000" data-distance="4" onclick="toggle(this)">
-<h3>カサメント庄衛 <span class="badge open">募集中</span></h3>
-<p>佐世保市川下町258｜徒歩4分</p>
-<p class="appeal">オートロック／RC造</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市川下町258" target="_blank">内覧可能</a>
-</div>
-
-<div class="apartment" data-rent="38000" data-distance="1" onclick="toggle(this)">
-<h3>澄美アパート <span class="badge open">募集中</span></h3>
-<p>佐世保市川下町151-2｜徒歩1分</p>
-<p class="appeal">大学最短／駐車場あり</p>
-<a class="visit" href="https://maps.google.com/?q=佐世保市川下町151-2" target="_blank">内覧可能</a>
-</div>
-
-<div class="apartment full" data-rent="0" data-distance="0" onclick="toggle(this)">
-<h3>ASAHIハイツ <span class="badge full-badge">満室</span></h3>
-<p>現在満室</p>
-</div>
-
-<div class="apartment full" data-rent="0" data-distance="0" onclick="toggle(this)">
-<h3>ウイングハウス <span class="badge full-badge">満室</span></h3>
-<p>現在満室</p>
-</div>
-
+<div class="property">
+<img src="student.jpg">
+<div>
+<h3>① スチューデントハウス <span class="badge open">募集中</span></h3>
+<p>家賃：28,000円〜｜大学まで徒歩7分</p>
+<p>新品家電付き・ネット無料</p>
+<a class="btn" href="#">内覧可能</a>
 </div>
 </div>
 
-<script>
-function toggle(card){
-  const badge=card.querySelector('.badge');
-  const visit=card.querySelector('.visit');
-  if(card.classList.contains('full')){
-    card.classList.remove('full');
-    badge.textContent='募集中';
-    badge.className='badge open';
-    if(visit) visit.classList.remove('hidden');
-  }else{
-    card.classList.add('full');
-    badge.textContent='満室';
-    badge.className='badge full-badge';
-    if(visit) visit.classList.add('hidden');
-  }
-}
-function sortRent(){
-  const l=document.getElementById('list');
-  [...l.children].sort((a,b)=>a.dataset.rent-b.dataset.rent).forEach(e=>l.appendChild(e));
-}
-function sortDistance(){
-  const l=document.getElementById('list');
-  [...l.children].sort((a,b)=>a.dataset.distance-b.dataset.distance).forEach(e=>l.appendChild(e));
-}
-</script>
+<div class="property">
+<img src="prandor1.jpg">
+<div>
+<h3>② プランドール壱番館 <span class="badge open">募集中</span></h3>
+<p>家賃：50,000円〜｜上相浦町</p>
+<p>指定ゴミ袋不要・二重サッシ</p>
+<a class="btn" href="#">内覧可能</a>
+</div>
+</div>
 
+<div class="property">
+<img src="prandor2.jpg">
+<div>
+<h3>③ プランドール弐番館 <span class="badge open">募集中</span></h3>
+<p>家賃：50,000円〜｜大学徒歩8分</p>
+<p>1階管理会社</p>
+<a class="btn" href="#">内覧可能</a>
+</div>
+</div>
+
+<div class="property">
+<img src="sumibi.jpg">
+<div>
+<h3>④ 澄美アパート <span class="badge open">募集中</span></h3>
+<p>家賃：38,000円〜｜大学徒歩1分</p>
+<p>2DK・駐車場あり</p>
+<a class="btn" href="#">内覧可能</a>
+</div>
+</div>
+
+<div class="property">
+<img src="casamento.jpg">
+<div>
+<h3>⑤ カサメント庄衛 <span class="badge open">募集中</span></h3>
+<p>家賃：45,000円〜｜大学徒歩4分</p>
+<p>RC造・オートロック</p>
+<a class="btn" href="#">内覧可能</a>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+<h2>お問い合わせ</h2>
+<p>📧 メール：<a href="mailto:arakitiken@gmail.com">arakitiken@gmail.com</a></p>
+<p>💬 LINE：<a href="https://line.me/ti/p/ffSyBRWGVl">公式LINEはこちら</a></p>
+</section>
+
+</div>
+
+<footer>
+© 荒木地建 All rights reserved.
+</footer>
 </body>
 </html>

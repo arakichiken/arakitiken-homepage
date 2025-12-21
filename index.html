@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>荒木地建｜学生向けアパート一覧</title>
+<title>荒木地建｜学生向けアパート 完全版</title>
 <style>
 body{margin:0;font-family:system-ui,-apple-system,"Yu Gothic",sans-serif;background:#f5f6f8}
 header{background:#7c3aed;color:#fff;padding:20px}
 header h1{margin:0;font-size:30px}
+header p{margin:6px 0 0;font-size:14px}
 .container{max-width:1200px;margin:auto;padding:16px}
 .section{background:#fff;border-radius:16px;padding:18px;margin-top:20px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
-.property{display:flex;gap:14px;border-radius:12px;padding:12px;border:1px solid #e5e7eb;margin-bottom:12px}
-.property.full{opacity:.4;filter:grayscale(70%)}
-.property img{width:120px;height:90px;object-fit:cover;border-radius:8px}
+.property{border:1px solid #e5e7eb;border-radius:14px;padding:14px;margin-bottom:16px}
+.property.full{opacity:.45;filter:grayscale(70%)}
+.property h3{margin:0}
 .status.open{color:#16a34a;font-weight:700}
 .status.full{color:#dc2626;font-weight:700}
-.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.details{font-size:14px;color:#334155;margin-top:6px}
+.details li{margin-bottom:4px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .btn{padding:6px 12px;border-radius:999px;border:none;color:#fff;cursor:pointer;font-size:13px;text-decoration:none}
 .btn.visit{background:#2563eb}
 .btn.tel{background:#16a34a}
@@ -27,150 +30,178 @@ footer{text-align:center;font-size:12px;color:#64748b;padding:20px}
 </head>
 <body>
 <header>
-<h1>荒木地建｜学生向けアパート一覧</h1>
+<h1>荒木地建</h1>
+<p>長崎県佐世保市｜学生向けアパート・不動産仲介</p>
 </header>
 <div class="container">
+
 <section class="section">
-<h2>学生向けアパート（全物件）</h2>
+<h2>新着情報</h2>
+<ul>
+<li>2026.01 ホームページを公開しました</li>
+<li>学生向けアパート 募集中物件あり</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>学生向けアパート一覧（完全詳細）</h2>
 
 <!-- プランドール壱番館 -->
 <div class="property" id="ichiban">
-<img src="img/ichiban.jpg">
-<div>
 <h3>プランドール壱番館</h3>
-<p>家賃：50,000円〜｜1K｜全6戸｜大学徒歩圏</p>
 <p class="status open">募集中</p>
+<ul class="details">
+<li>所在地：佐世保市上相浦町5-23</li>
+<li>木造亜鉛鉄板葺2階建｜全6戸</li>
+<li>1K（8洋＋3K）</li>
+<li>家賃：50,000円〜</li>
+<li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+<li>風呂トイレ別／モニター付インターホン／IH／エアコン／照明</li>
+<li>インターネット無料／洗濯機室内置／独立洗面台／洗浄便座</li>
+<li>専用ゴミ捨て場あり（指定ゴミ袋不要）</li>
+<li>二重サッシ／シャッター付き</li>
+<li>鍵は家主負担で新品交換</li>
+<li>2年契約・自動更新・更新料なし</li>
+</ul>
 <div class="actions">
 <a class="btn visit">内覧可能</a>
 <a class="btn tel" href="tel:0956482540">電話</a>
 <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl">LINE</a>
 <a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
-<button class="btn toggle" onclick="toggleStatus('ichiban')">切替</button>
-</div>
+<button class="btn toggle" onclick="toggleStatus('ichiban')">満室切替</button>
 </div>
 </div>
 
 <!-- プランドール弐番館 -->
 <div class="property" id="niban">
-<img src="img/niban.jpg">
-<div>
 <h3>プランドール弐番館</h3>
-<p>家賃：50,000円〜｜全9戸｜徒歩8分</p>
 <p class="status open">募集中</p>
+<ul class="details">
+<li>所在地：佐世保市川下町229-1</li>
+<li>2015年築｜木造亜鉛鉄板葺2階建｜全9戸</li>
+<li>大学まで徒歩8分</li>
+<li>設備・条件は壱番館と同じ</li>
+<li>1階に管理会社あり</li>
+</ul>
 <div class="actions">
 <a class="btn visit">内覧可能</a>
 <a class="btn tel" href="tel:0956482540">電話</a>
 <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl">LINE</a>
 <a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
-<button class="btn toggle" onclick="toggleStatus('niban')">切替</button>
-</div>
+<button class="btn toggle" onclick="toggleStatus('niban')">満室切替</button>
 </div>
 </div>
 
 <!-- プランドール参番館 -->
 <div class="property" id="sanban">
-<img src="img/sanban.jpg">
-<div>
 <h3>プランドール参番館</h3>
-<p>家賃：50,000円〜｜全6戸｜徒歩16分｜オートロック</p>
 <p class="status open">募集中</p>
+<ul class="details">
+<li>所在地：佐世保市新田町67-49</li>
+<li>2020年築｜全6戸｜全室角部屋</li>
+<li>大学まで徒歩16分</li>
+<li>オートロック／ウォークインクローゼット</li>
+<li>2・3階 女性専用</li>
+</ul>
 <div class="actions">
 <a class="btn visit">内覧可能</a>
 <a class="btn tel" href="tel:0956482540">電話</a>
 <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl">LINE</a>
 <a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
-<button class="btn toggle" onclick="toggleStatus('sanban')">切替</button>
-</div>
+<button class="btn toggle" onclick="toggleStatus('sanban')">満室切替</button>
 </div>
 </div>
 
 <!-- ノースリバー -->
 <div class="property" id="north">
-<img src="img/north.jpg">
-<div>
 <h3>ノースリバー</h3>
-<p>家賃：35,000円〜｜全20戸｜徒歩14分</p>
 <p class="status open">募集中</p>
+<ul class="details">
+<li>所在地：佐世保市相浦町288-1</li>
+<li>木造スレート瓦葺2階建｜全20戸</li>
+<li>大学まで徒歩14分</li>
+<li>1K（7.5洋＋2K）</li>
+<li>家賃：35,000円〜（2階＋1,000円）</li>
+<li>駐車場あり・臨時駐車可</li>
+<li>鍵は家主負担で新品交換</li>
+</ul>
 <div class="actions">
 <a class="btn visit">内覧可能</a>
 <a class="btn tel" href="tel:0956482540">電話</a>
 <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl">LINE</a>
 <a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
-<button class="btn toggle" onclick="toggleStatus('north')">切替</button>
-</div>
+<button class="btn toggle" onclick="toggleStatus('north')">満室切替</button>
 </div>
 </div>
 
 <!-- スチューデントハウス -->
 <div class="property" id="student">
-<img src="img/student.jpg">
-<div>
 <h3>スチューデントハウス</h3>
-<p>家賃：28,000円〜｜徒歩7分</p>
 <p class="status open">募集中</p>
+<ul class="details">
+<li>佐世保市大潟町60-79｜大学徒歩7分</li>
+<li>家賃：28,000円〜｜2階＋1,000円</li>
+<li>新品家電付き（冷蔵庫・洗濯機・電子レンジ等）</li>
+</ul>
 <div class="actions">
 <a class="btn visit">内覧可能</a>
 <a class="btn tel" href="tel:0956482540">電話</a>
 <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl">LINE</a>
 <a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
-<button class="btn toggle" onclick="toggleStatus('student')">切替</button>
-</div>
+<button class="btn toggle" onclick="toggleStatus('student')">満室切替</button>
 </div>
 </div>
 
 <!-- 澄美アパート -->
 <div class="property" id="sumi">
-<img src="img/sumi.jpg">
-<div>
 <h3>澄美アパート</h3>
-<p>家賃：38,000円〜｜大学徒歩1分</p>
 <p class="status open">募集中</p>
+<ul class="details">
+<li>川下町151-2｜大学徒歩1分</li>
+<li>2DK（6洋＋6和＋3K）</li>
+<li>家賃：38,000円</li>
+<li>駐車場・駐輪場あり</li>
+</ul>
 <div class="actions">
 <a class="btn visit">内覧可能</a>
 <a class="btn tel" href="tel:0956482540">電話</a>
 <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl">LINE</a>
 <a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
-<button class="btn toggle" onclick="toggleStatus('sumi')">切替</button>
-</div>
+<button class="btn toggle" onclick="toggleStatus('sumi')">満室切替</button>
 </div>
 </div>
 
 <!-- カサメント庄衛 -->
 <div class="property" id="casamento">
-<img src="img/casamento.jpg">
-<div>
 <h3>カサメント庄衛</h3>
-<p>家賃：45,000円〜｜徒歩4分｜RC造</p>
 <p class="status open">募集中</p>
+<ul class="details">
+<li>佐世保市川下町258</li>
+<li>RC造4階建｜全戸角部屋</li>
+<li>家賃：45,000円〜</li>
+<li>オートロック｜大学徒歩4分</li>
+</ul>
 <div class="actions">
 <a class="btn visit">内覧可能</a>
 <a class="btn tel" href="tel:0956482540">電話</a>
 <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl">LINE</a>
 <a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
-<button class="btn toggle" onclick="toggleStatus('casamento')">切替</button>
-</div>
+<button class="btn toggle" onclick="toggleStatus('casamento')">満室切替</button>
 </div>
 </div>
 
 </section>
 </div>
 <footer>© 荒木地建</footer>
-
 <script>
 function toggleStatus(id){
-  const box=document.getElementById(id);
-  const status=box.querySelector('.status');
-  if(status.classList.contains('open')){
-    status.classList.remove('open');
-    status.classList.add('full');
-    status.textContent='満室';
-    box.classList.add('full');
-  }else{
-    status.classList.remove('full');
-    status.classList.add('open');
-    status.textContent='募集中';
-    box.classList.remove('full');
-  }
+ const box=document.getElementById(id);
+ const status=box.querySelector('.status');
+ if(status.classList.contains('open')){
+  status.classList.remove('open');status.classList.add('full');status.textContent='満室';box.classList.add('full');
+ }else{
+  status.classList.remove('full');status.classList.add('open');status.textContent='募集中';box.classList.remove('full');
+ }
 }
 </script>
 </body>

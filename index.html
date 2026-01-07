@@ -1,40 +1,394 @@
 <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>荒木地建｜学生向けアパート 完全版</title>
+  <meta name="description" content="荒木地建（佐世保市）の学生向けアパート情報。募集中・満室の切り替え、家賃・距離並び替えが可能です。" />
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;background:#f5f6f8;color:#0f172a}
+    header{background:#7c3aed;color:#fff;padding:20px}
+    header h1{margin:0;font-size:30px}
+    header p{margin:6px 0 0;font-size:14px;opacity:.95}
+    nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:6px 12px;border-radius:999px;font-size:13px}
+
+    .container{max-width:1200px;margin:0 auto;padding:16px}
+    .section{background:#fff;border-radius:16px;padding:18px;margin-top:20px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
+    .section h2{margin:0 0 12px;font-size:20px}
+
+    .meta{color:#475569;font-size:13px;line-height:1.6}
+
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+    .controls button{padding:8px 12px;border-radius:999px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-size:13px}
+
+    .property{border:1px solid #e5e7eb;border-radius:14px;padding:14px;margin-bottom:14px;background:#fff}
+    .property.full{opacity:.45;filter:grayscale(70%)}
+    .property h3{margin:0 0 4px;font-size:18px}
+
+    .status{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;font-size:12px;color:#fff;vertical-align:2px}
+    .status.open{background:#16a34a}
+    .status.full{background:#dc2626}
+
+    .subline{margin:2px 0 8px;color:#334155;font-size:14px}
+    .details{margin:0;padding-left:18px;color:#334155;font-size:14px}
+    .details li{margin:0 0 4px}
+
+    .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .btn{display:inline-block;padding:8px 14px;border-radius:999px;border:none;color:#fff;cursor:pointer;font-size:13px;text-decoration:none}
+    .btn.visit{background:#2563eb}
+    .btn.toggle{background:#64748b}
+
+    .news{margin:0;padding-left:18px}
+    .news li{margin:0 0 6px}
+
+    /* お問い合わせボタン */
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn.tel{background:#16a34a}
+    .btn.line{background:#22c55e}
+    .btn.mail{background:#0ea5e9}
+
+    footer{padding:22px 0;text-align:center;font-size:12px;color:#64748b}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>荒木地建</h1>
+  <p>長崎県佐世保市｜不動産仲介業（学生向けアパート・米軍住宅管理・ファミリー物件）</p>
+  <nav>
+    <a href="#about">会社概要</a>
+    <a href="#news">新着情報</a>
+    <a href="#apartments">学生向けアパート</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- 会社概要 -->
+  <section class="section" id="about">
+    <h2>会社概要</h2>
+    <div class="meta">
+      <div><strong>会社名：</strong>荒木地建</div>
+      <div><strong>所在地：</strong>〒858-0914 長崎県佐世保市川下町229-1</div>
+      <div><strong>電話：</strong><a href="tel:0956482540">0956-48-2540</a></div>
+      <div><strong>メール：</strong><a href="mailto:arakitiken@gmail.com">arakitiken@gmail.com</a></div>
+      <div><strong>営業時間：</strong>9:00〜17:00（土日祝休み・予約対応可）</div>
+      <div><strong>開業：</strong>2026.1</div>
+    </div>
+    <p class="meta" style="margin-top:10px">※ 石鯛の画像は、後で <code>ishidai.png</code> などに差し替えて表示できます。</p>
+  </section>
+
+  <!-- 新着情報 -->
+  <section class="section" id="news">
+    <h2>新着情報</h2>
+    <ul class="news">
+      <li>2026.01　ホームページを公開しました</li>
+      <li>2026.01　学生向けアパートの空室情報を更新しました</li>
+    </ul>
+  </section>
+
+  <!-- 学生向けアパート一覧 -->
+  <section class="section" id="apartments">
+    <h2>学生向けアパート一覧（詳細）</h2>
+
+    <div class="controls">
+      <button type="button" onclick="sortByRent()">家賃が安い順</button>
+      <button type="button" onclick="sortByDistance()">大学に近い順</button>
+    </div>
+
+    <div id="list">
+
+      <!-- プランドール壱番館 -->
+      <div class="property" id="ichiban" data-rent="50000" data-distance="9999">
+        <h3>プランドール壱番館 <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市上相浦町5-23｜木造亜鉛鉄板葺2階建｜全6戸</p>
+        <ul class="details">
+          <li>間取り：1K（8洋＋3K）</li>
+          <li>家賃：50,000円〜</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備：風呂トイレ別／モニター付インターホン／インターネット無料／洗濯機室内置き／洗浄付便座／独立洗面台／IH／エアコン／照明</li>
+          <li>アピール：専用ゴミ捨て場あり（指定ゴミ袋不要）／シャッター付き二重サッシ</li>
+          <li>鍵：家主負担で新品に交換</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+          <li>備考：退去時に清掃料がかかる場合があります</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('ichiban')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- プランドール弐番館 -->
+      <div class="property" id="niban" data-rent="50000" data-distance="8">
+        <h3>プランドール弐番館 <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市川下町229-1｜木造亜鉛鉄板葺2階建｜2015年築｜全9戸｜大学まで徒歩8分</p>
+        <ul class="details">
+          <li>家賃：50,000円〜</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備・条件：壱番館と同じ</li>
+          <li>特徴：1階に管理会社（荒木地建）あり</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+          <li>備考：退去時に清掃料がかかる場合があります</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('niban')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- プランドール参番館 -->
+      <div class="property" id="sanban" data-rent="50000" data-distance="16">
+        <h3>プランドール参番館 <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市新田町67-49｜2020年築｜全6戸｜全室角部屋｜大学まで徒歩16分</p>
+        <ul class="details">
+          <li>家賃：50,000円〜</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備・条件：壱番館と同じ</li>
+          <li>特徴：オートロック／ウォークインクローゼット</li>
+          <li>女性専用：2・3階が女性専用</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+          <li>備考：退去時に清掃料がかかる場合があります</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('sanban')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- ノースリバー -->
+      <div class="property" id="north" data-rent="35000" data-distance="14">
+        <h3>ノースリバー <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市相浦町288-1｜木造スレート瓦葺2階建｜全20戸｜大学まで徒歩14分</p>
+        <ul class="details">
+          <li>間取り：1K（7.5洋＋2K）</li>
+          <li>家賃：35,000円〜（2階＋1,000円）</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備：風呂トイレ別／モニター付インターホン／インターネット無料／洗濯機室内置き／ウォシュレット／2口IH／エアコン／照明</li>
+          <li>アピール：駐車場付き／引越し等の臨時駐車場あり</li>
+          <li>鍵：家主負担で新品に交換</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('north')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- カーサシティⅠ -->
+      <div class="property" id="casa1" data-rent="32000" data-distance="12">
+        <h3>カーサシティⅠ <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市大潟町142-2｜木造瓦葺2階建｜1991年築｜全52戸｜大学まで徒歩12分</p>
+        <ul class="details">
+          <li>間取り：1K（8.4洋＋3K）</li>
+          <li>家賃：32,000円〜</li>
+          <li>敷金0・礼金1ヶ月・仲介手数料1ヶ月</li>
+          <li>設備：風呂トイレ別／モニター付インターホン／駐車場／インターネット無料／洗濯機室内置き／ウォシュレット／2口IH／照明／エアコン</li>
+          <li>その他：引越し時等の臨時無料駐車場／宅配BOX／コインランドリー／新品カーテンプレゼント／下駄箱付き</li>
+          <li>鍵交換代：10,000円</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('casa1')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- カーサシティⅡ -->
+      <div class="property" id="casa2" data-rent="33000" data-distance="11">
+        <h3>カーサシティⅡ <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市大潟町250-1｜1995年築｜大学まで徒歩11分</p>
+        <ul class="details">
+          <li>家賃：33,000円〜</li>
+          <li>敷金0・礼金1ヶ月・仲介手数料1ヶ月</li>
+          <li>設備・その他：カーサシティⅠと同じ</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('casa2')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- ヴィラ朝日ヶ丘 -->
+      <div class="property" id="villa" data-rent="32000" data-distance="6">
+        <h3>ヴィラ朝日ヶ丘 <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市大潟町60-136｜1993年築｜木造スレート瓦葺2階建｜全14戸｜大学まで徒歩6分</p>
+        <ul class="details">
+          <li>間取り：ワンルーム（7.5洋）</li>
+          <li>家賃：32,000円〜（2階＋1,000円）</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備：風呂トイレ別／モニター付インターホン／インターネット無料／洗濯機室内置き／ウォシュレット／IH／エアコン／照明</li>
+          <li>アピール：専用ゴミ捨て場あり（指定ゴミ袋不要）／鍵は家主負担で新品交換</li>
+          <li>備考：隣は家主宅／駐車場・駐輪場あり</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('villa')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- コーププリメイラ -->
+      <div class="property" id="prima" data-rent="30000" data-distance="16">
+        <h3>コーププリメイラ <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市大潟町730-12｜1987年築｜軽量鉄骨造2階建｜全42戸｜大学まで徒歩16分</p>
+        <ul class="details">
+          <li>間取り：ワンルーム（7洋）</li>
+          <li>家賃：30,000円〜（水道料金 家賃込み）</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備：モニター付インターホン／インターネット無料／洗濯機室内置き／IH／エアコン／照明</li>
+          <li>アピール：専用ゴミ捨て場あり（指定ゴミ袋不要）／鍵は家主負担で新品交換</li>
+          <li>新品家電：冷蔵庫・洗濯機・電子レンジ付き／防犯カメラ付き</li>
+          <li>備考：駐輪場あり</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('prima')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- スチューデントハウス -->
+      <div class="property" id="student" data-rent="28000" data-distance="7">
+        <h3>スチューデントハウス <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市大潟町60-79｜大学まで徒歩7分</p>
+        <ul class="details">
+          <li>間取り：ワンルーム（7洋）</li>
+          <li>家賃：28,000円〜（2階＋1,000円）</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備：風呂トイレ別／インターネット無料／洗濯機室内置き／IH／エアコン／ウォシュレット／照明</li>
+          <li>新品家電：洗濯機・冷蔵庫・電子レンジ・炊飯器・電気ケトル</li>
+          <li>鍵：家主負担で新品に交換</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('student')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- カサメント庄衛 -->
+      <div class="property" id="casamento" data-rent="45000" data-distance="4">
+        <h3>カサメント庄衛 <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：佐世保市川下町258｜2005年築｜RC造4階建｜全戸角部屋｜大学まで徒歩4分</p>
+        <ul class="details">
+          <li>間取り：1K（7洋＋3.8K）</li>
+          <li>家賃：45,000円〜</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備：風呂トイレ別／オートロック／インターネット無料／洗濯機室内置き／ウォシュレット／独立洗面台／エアコン／照明／二重サッシ</li>
+          <li>アピール：大学に一番近いオートロックマンション</li>
+          <li>鍵：家主負担で新品に交換</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('casamento')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- 澄美アパート -->
+      <div class="property" id="sumi" data-rent="38000" data-distance="1">
+        <h3>澄美アパート <span class="status open">募集中</span></h3>
+        <p class="subline">所在地：川下町151-2｜1983年築｜木造2階建｜全8戸｜大学まで徒歩1分</p>
+        <ul class="details">
+          <li>間取り：2DK（6洋＋6和＋3K）</li>
+          <li>家賃：38,000円〜</li>
+          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+          <li>設備：風呂トイレ別／インターネット無料／洗濯機室内置き／ウォシュレット／エアコン／照明</li>
+          <li>鍵：家主負担で新品に交換</li>
+          <li>駐車場・駐輪場あり</li>
+          <li>契約：2年契約・自動更新・更新料なし（全物件共通）</li>
+        </ul>
+        <div class="actions">
+          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
+          <button class="btn toggle" type="button" onclick="toggleStatus('sumi')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- ASAHIハイツ -->
+      <div class="property full" id="asahi" data-rent="0" data-distance="9999">
+        <h3>ASAHIハイツ <span class="status full">満室</span></h3>
+        <p class="subline">現在満室です</p>
+        <div class="actions">
+          <button class="btn toggle" type="button" onclick="toggleStatus('asahi')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- ウイングハウス -->
+      <div class="property full" id="wing" data-rent="0" data-distance="9999">
+        <h3>ウイングハウス <span class="status full">満室</span></h3>
+        <p class="subline">現在満室です</p>
+        <div class="actions">
+          <button class="btn toggle" type="button" onclick="toggleStatus('wing')">満室切替</button>
+        </div>
+      </div>
+
+      <!-- 未入力（追加予定） -->
+      <div class="property" id="others" data-rent="999999" data-distance="9999">
+        <h3>その他の物件（追加予定） <span class="status open">募集中</span></h3>
+        <p class="subline">カーサメント庄衛・澄美アパート以外の「ASAHIハイツ／ウイングハウス以外で名前だけ挙がっている物件」
+          （カーサシティ以外：カーサシティは反映済み）について、詳細情報をいただければ追記します。</p>
+        <ul class="details">
+          <li>カーサシティ以外で名前のあった物件：カーサシティは反映済み</li>
+          <li>候補：カーサシティ以外（ヴィラ・プリメイラ・スチューデントは反映済み）</li>
+        </ul>
+        <div class="actions">
+          <button class="btn toggle" type="button" onclick="toggleStatus('others')">満室切替</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- お問い合わせ（共通で1つ） -->
+  <section class="section" id="contact">
+    <h2>お問い合わせ</h2>
+    <p class="meta">※ 全物件共通の連絡先です。</p>
+    <div class="contact-actions">
+      <a class="btn tel" href="tel:0956482540">📞 電話で問い合わせ</a>
+      <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl" target="_blank" rel="noopener">LINEで問い合わせ</a>
+      <a class="btn mail" href="mailto:arakitiken@gmail.com">メールで問い合わせ</a>
+    </div>
+  </section>
+
+  <footer>© 荒木地建 All rights reserved.</footer>
+</main>
+
+<script>
 function toggleStatus(id){
-const box = document.getElementById(id);
-if(!box) return;
-const badge = box.querySelector('.status');
-const visit = box.querySelector('.btn.visit');
+  const box = document.getElementById(id);
+  if(!box) return;
+  const badge = box.querySelector('.status');
+  const visit = box.querySelector('.btn.visit');
 
-
-const isFull = box.classList.contains('full');
-if(isFull){
-box.classList.remove('full');
-if(badge){ badge.classList.remove('full'); badge.classList.add('open'); badge.textContent = '募集中'; }
-if(visit) visit.style.display = 'inline-block';
-}else{
-box.classList.add('full');
-if(badge){ badge.classList.remove('open'); badge.classList.add('full'); badge.textContent = '満室'; }
-if(visit) visit.style.display = 'none';
+  const isFull = box.classList.contains('full');
+  if(isFull){
+    box.classList.remove('full');
+    if(badge){ badge.classList.remove('full'); badge.classList.add('open'); badge.textContent = '募集中'; }
+    if(visit) visit.style.display = 'inline-block';
+  }else{
+    box.classList.add('full');
+    if(badge){ badge.classList.remove('open'); badge.classList.add('full'); badge.textContent = '満室'; }
+    if(visit) visit.style.display = 'none';
+  }
 }
-}
-
 
 function sortByRent(){
-const list = document.getElementById('list');
-const items = [...list.querySelectorAll('.property')];
-items.sort((a,b)=> (Number(a.dataset.rent)||999999) - (Number(b.dataset.rent)||999999));
-items.forEach(el=>list.appendChild(el));
+  const list = document.getElementById('list');
+  const items = [...list.querySelectorAll('.property')];
+  items.sort((a,b)=> (Number(a.dataset.rent)||999999) - (Number(b.dataset.rent)||999999));
+  items.forEach(el=>list.appendChild(el));
 }
-
 
 function sortByDistance(){
-const list = document.getElementById('list');
-const items = [...list.querySelectorAll('.property')];
-items.sort((a,b)=> (Number(a.dataset.distance)||999999) - (Number(b.dataset.distance)||999999));
-items.forEach(el=>list.appendChild(el));
+  const list = document.getElementById('list');
+  const items = [...list.querySelectorAll('.property')];
+  items.sort((a,b)=> (Number(a.dataset.distance)||999999) - (Number(b.dataset.distance)||999999));
+  items.forEach(el=>list.appendChild(el));
 }
 </script>
-
 
 </body>
 </html>

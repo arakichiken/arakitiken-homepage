@@ -94,32 +94,42 @@
     <div id="list">
 
       <!-- プランドール壱番館 -->
-        <div class="photos">
-          <img src="images/ichiban/01.jpg" alt="プランドール壱番館 写真1">
-          <img src="images/ichiban/02.jpg" alt="プランドール壱番館 写真2">
-          <img src="images/ichiban/03.jpg" alt="プランドール壱番館 写真3">
-          <img src="images/ichiban/04.jpg" alt="プランドール壱番館 写真4">
-          <img src="images/ichiban/05.jpg" alt="プランドール壱番館 写真5">
-          <img src="images/ichiban/06.jpg" alt="プランドール壱番館 写真6">
-          <img src="images/ichiban/07.jpg" alt="プランドール壱番館 写真7">
-        </div>
-        <p class="subline">所在地：佐世保市上相浦町5-23｜木造亜鉛鉄板葺2階建｜全6戸</p>
-        <ul class="details">
-          <li>間取り：1K（8洋＋3K）</li>
-          <li>家賃：50,000円〜</li>
-          <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
-          <li>設備：風呂トイレ別／モニター付インターホン／インターネット無料／洗濯機室内置き／洗浄付便座／独立洗面台／IH／エアコン／照明</li>
-          <li>アピール：専用ゴミ捨て場あり（指定ゴミ袋不要）／シャッター付き二重サッシ</li>
-          <li>鍵：家主負担で新品に交換</li>
-          <li>契約：2年契約・自動更新・更新料なし</li>
-          <li>備考：退去時に清掃料がかかる場合があります</li>
-        </ul>
-        <div class="actions">
-          <a class="btn visit" href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">内覧可能</a>
-          <button class="btn toggle" type="button" onclick="toggleStatus('ichiban')">満室切替</button>
-        </div>
-      </div>
+       <!-- プランドール壱番館 -->
+<div class="property" id="ichiban" data-rent="50000" data-distance="0">
+  <h3>プランドール壱番館 <span class="status open">募集中</span></h3>
 
+  <div class="photos">
+    <img src="images/ichiban/01.jpg" alt="プランドール壱番館 写真1">
+    <img src="images/ichiban/02.jpg" alt="プランドール壱番館 写真2">
+    <img src="images/ichiban/03.jpg" alt="プランドール壱番館 写真3">
+    <img src="images/ichiban/04.jpg" alt="プランドール壱番館 写真4">
+    <img src="images/ichiban/05.jpg" alt="プランドール壱番館 写真5">
+    <img src="images/ichiban/06.jpg" alt="プランドール壱番館 写真6">
+    <img src="images/ichiban/07.jpg" alt="プランドール壱番館 写真7">
+  </div>
+
+  <p class="subline">所在地：佐世保市上相浦町5-23｜木造亜鉛鉄板葺2階建｜全6戸</p>
+
+  <ul class="details">
+    <li>間取り：1K（8洋＋3K）</li>
+    <li>家賃：50,000円〜</li>
+    <li>敷金0・礼金2ヶ月・仲介手数料1ヶ月</li>
+    <li>設備：風呂トイレ別／モニター付インターホン／インターネット無料／洗濯機室内置き／洗浄付便座／独立洗面台／IH／エアコン／照明</li>
+    <li>アピール：専用ゴミ捨て場あり（指定ゴミ袋不要）／シャッター付き二重サッシ</li>
+    <li>鍵：家主負担で新品に交換</li>
+    <li>契約：2年契約・自動更新・更新料なし</li>
+    <li>備考：退去時に清掃料がかかる場合があります</li>
+  </ul>
+
+  <div class="actions">
+    <a class="btn visit" href="#contact"
+       onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+      内覧可能
+    </a>
+    <button class="btn toggle" type="button" onclick="toggleStatus('ichiban')">
+      満室切替
+    </button>
+  </div>
       <!-- プランドール弐番館 -->
       <div class="property" id="niban" data-rent="50000" data-distance="8">
         <h3>プランドール弐番館 <span class="status open">募集中</span></h3>

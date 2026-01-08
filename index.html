@@ -48,6 +48,10 @@
     .btn.line{background:#22c55e}
     .btn.mail{background:#0ea5e9}
 
+    /* 写真（横スワイプ）: 3枚でも7枚でも同じ形式でOK */
+    .photos{display:flex;gap:10px;overflow-x:auto;padding:8px 0 4px;scroll-snap-type:x mandatory}
+    .photos img{height:90px;max-width:140px;width:auto;object-fit:cover;border-radius:12px;border:1px solid #e5e7eb;flex:0 0 auto;scroll-snap-align:start}
+
     footer{padding:22px 0;text-align:center;font-size:12px;color:#64748b}
   </style>
 </head>
@@ -90,16 +94,16 @@
     <div id="list">
 
       <!-- プランドール壱番館 -->
-      <div class="property" id="ichiban" data-rent="50000" data-distance="9999">
-        <h3>プランドール壱番館 <span class="status open">募集中</span></h3>
-<div style="display:flex;gap:8px;overflow-x:auto;margin:8px 0 12px">
-  <img src="images/ichiban/01.jpg" alt="プランドール壱番館 外観"
-       style="height:160px;border-radius:12px">
-  <img src="images/ichiban/02.jpg" alt="プランドール壱番館 室内"
-       style="height:160px;border-radius:12px">
-  <img src="images/ichiban/03.jpg" alt="プランドール壱番館 キッチン"
-       style="height:160px;border-radius:12px">
-</div>
+      $1
+        <div class="photos">
+          <img src="images/ichiban/01.jpg" alt="プランドール壱番館 写真1">
+          <img src="images/ichiban/02.jpg" alt="プランドール壱番館 写真2">
+          <img src="images/ichiban/03.jpg" alt="プランドール壱番館 写真3">
+          <img src="images/ichiban/04.jpg" alt="プランドール壱番館 写真4">
+          <img src="images/ichiban/05.jpg" alt="プランドール壱番館 写真5">
+          <img src="images/ichiban/06.jpg" alt="プランドール壱番館 写真6">
+          <img src="images/ichiban/07.jpg" alt="プランドール壱番館 写真7">
+        </div>
         <p class="subline">所在地：佐世保市上相浦町5-23｜木造亜鉛鉄板葺2階建｜全6戸</p>
         <ul class="details">
           <li>間取り：1K（8洋＋3K）</li>

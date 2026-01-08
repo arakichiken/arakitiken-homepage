@@ -104,18 +104,16 @@
 .photos{
   display:flex;
   gap:10px;
-  max-width:140px;
   overflow-x:auto;
-  object-fit:cover;
   padding:8px 0 4px;
   scroll-snap-type:x mandatory;
 }
+
 .photos img{
-  height:90px;         
+  height:90px;
+  max-width:140px;      /* ← ここが重要 */
   width:auto;
-  border-radius:10px;
-  border:1px solid #e5e7eb;
-  flex:0 0 auto;
+  object-fit:cover;    /* ← imgに指定 */
   border-radius:12px;
   border:1px solid #e5e7eb;
   flex:0 0 auto;

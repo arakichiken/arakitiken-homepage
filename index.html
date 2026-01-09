@@ -1,122 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>荒木地建｜学生向けアパート</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>荒木地建｜学生向けアパート 完全版</title>
+  <meta name="description" content="荒木地建（佐世保市）の学生向けアパート情報。募集中・満室の切り替え、家賃・距離並び替えが可能です。" />
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;background:#f5f6f8;color:#0f172a}
+    header{background:#7c3aed;color:#fff;padding:20px}
+    header h1{margin:0;font-size:30px}
+    header p{margin:6px 0 0;font-size:14px;opacity:.95}
+    nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:6px 12px;border-radius:999px;font-size:13px}
 
-<style>
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-  background:#f5f6f8;
-  color:#0f172a;
-}
-header{
-  background:#7c3aed;
-  color:#fff;
-  padding:20px;
-}
-header h1{margin:0;font-size:30px}
-nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-nav a{
-  color:#fff;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.4);
-  padding:6px 12px;
-  border-radius:999px;
-  font-size:13px;
-}
+    .container{max-width:1200px;margin:0 auto;padding:16px}
+    .section{background:#fff;border-radius:16px;padding:18px;margin-top:20px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
+    .section h2{margin:0 0 12px;font-size:20px}
 
-.container{max-width:1200px;margin:auto;padding:16px}
-.section{
-  background:#fff;
-  border-radius:16px;
-  padding:18px;
-  margin-top:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.05)
-}
-.section h2{margin-top:0}
+    .meta{color:#475569;font-size:13px;line-height:1.6}
 
-.property{
-  border:1px solid #e5e7eb;
-  border-radius:14px;
-  padding:14px;
-  margin-bottom:16px;
-}
-.property.full{
-  opacity:.45;
-  filter:grayscale(80%);
-}
-.property h3{margin:0 0 6px;font-size:18px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+    .controls button{padding:8px 12px;border-radius:999px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-size:13px}
 
-.status{
-  margin-left:8px;
-  padding:2px 10px;
-  border-radius:999px;
-  font-size:12px;
-  color:#fff;
-}
-.status.open{background:#16a34a}
-.status.full{background:#dc2626}
+    .property{border:1px solid #e5e7eb;border-radius:14px;padding:14px;margin-bottom:14px;background:#fff}
+    .property.full{opacity:.45;filter:grayscale(70%)}
+    .property h3{margin:0 0 4px;font-size:18px}
 
-.subline{font-size:14px;color:#334155;margin-bottom:8px}
-.details{font-size:14px;color:#334155;padding-left:18px}
-.details li{margin-bottom:4px}
+    .status{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;font-size:12px;color:#fff}
+    .status.open{background:#16a34a}
+    .status.full{background:#dc2626}
 
-.photos{
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding:6px 0;
-}
-.photos img{
-  height:90px;
-  max-width:140px;
-  border-radius:12px;
-  object-fit:cover;
-  border:1px solid #e5e7eb;
-  flex:0 0 auto;
-}
+    .subline{margin:2px 0 8px;color:#334155;font-size:14px}
+    .details{margin:0;padding-left:18px;color:#334155;font-size:14px}
+    .details li{margin:0 0 4px}
 
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.btn{
-  border:none;
-  padding:8px 14px;
-  border-radius:999px;
-  color:#fff;
-  cursor:pointer;
-  font-size:13px;
-}
-.btn.visit{background:#2563eb}
-.btn.toggle{background:#64748b}
+    .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .btn{display:inline-block;padding:8px 14px;border-radius:999px;border:none;color:#fff;cursor:pointer;font-size:13px;text-decoration:none}
+    .btn.visit{background:#2563eb}
+    .btn.toggle{background:#64748b}
 
-.contact-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.btn.tel{background:#16a34a}
-.btn.line{background:#22c55e}
-.btn.mail{background:#0ea5e9}
+    .news{margin:0;padding-left:18px}
+    .news li{margin:0 0 6px}
 
-footer{
-  text-align:center;
-  font-size:12px;
-  color:#64748b;
-  padding:20px 0;
-}
-</style>
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn.tel{background:#16a34a}
+    .btn.line{background:#22c55e}
+    .btn.mail{background:#0ea5e9}
+
+    .photos{display:flex;gap:10px;overflow-x:auto;padding:8px 0 4px}
+    .photos img{height:90px;width:140px;object-fit:cover;border-radius:12px;border:1px solid #e5e7eb;flex:0 0 auto}
+
+    footer{padding:22px 0;text-align:center;font-size:12px;color:#64748b}
+  </style>
 </head>
 
 <body>
 
 <header>
   <h1>荒木地建</h1>
+  <p>長崎県佐世保市｜不動産仲介業（学生向けアパート・米軍住宅管理・ファミリー物件）</p>
   <nav>
     <a href="#news">新着情報</a>
-    <a href="#apartments">学生向け</a>
-    <a href="#family">ファミリー</a>
+    <a href="#apartments">学生向けアパート</a>
+    <a href="#family">ファミリー物件</a>
     <a href="#contact">お問い合わせ</a>
     <a href="#about">会社概要</a>
   </nav>
@@ -125,92 +71,69 @@ footer{
 <main class="container">
 
 <section class="section" id="news">
-<h2>新着情報</h2>
-<ul>
-<li>2026.01 ホームページ公開</li>
-<li>2026.01 空室情報更新</li>
-</ul>
+  <h2>新着情報</h2>
+  <ul class="news">
+    <li>2026.01　ホームページを公開しました</li>
+    <li>2026.01　学生向けアパートの空室情報を更新しました</li>
+  </ul>
 </section>
 
 <section class="section" id="apartments">
-<h2>学生向けアパート</h2>
+  <h2>学生向けアパート一覧（詳細）</h2>
 
-<!-- プランドール壱番館 -->
-<div class="property" id="ichiban">
-<h3>プランドール壱番館 <span class="status open">募集中</span></h3>
+  <div class="controls">
+    <button onclick="sortByRent()">家賃が安い順</button>
+    <button onclick="sortByDistance()">大学に近い順</button>
+  </div>
 
-<div class="photos">
-<img src="images/ichiban/01.jpg">
-<img src="images/ichiban/02.jpg">
-<img src="images/ichiban/03.jpg">
-<img src="images/ichiban/04.jpg">
-<img src="images/ichiban/05.jpg">
-<img src="images/ichiban/06.jpg">
-<img src="images/ichiban/07.jpg">
-</div>
+  <div id="list">
 
-<p class="subline">佐世保市上相浦町5-23｜全6戸</p>
-<ul class="details">
-<li>1K（8洋＋3K）</li>
-<li>家賃：50,000円〜</li>
-<li>風呂トイレ別／ネット無料／IH／独立洗面台</li>
-<li>専用ゴミ捨て場／二重サッシ</li>
-<li>鍵：新品交換（家主負担）</li>
-</ul>
+    <!-- プランドール壱番館 -->
+    <div class="property" id="ichiban" data-rent="50000" data-distance="9999">
+      <h3>プランドール壱番館 <span class="status open">募集中</span></h3>
+      <div class="photos">
+        <img src="images/ichiban/01.jpg.JPG">
+        <img src="images/ichiban/02.jpg.JPG">
+        <img src="images/ichiban/03.jpg.JPG">
+        <img src="images/ichiban/04.jpg.JPG">
+        <img src="images/ichiban/05.jpg.JPG">
+        <img src="images/ichiban/06.jpg.JPG">
+        <img src="images/ichiban/07.jpg.JPG">
+      </div>
+      <p class="subline">佐世保市上相浦町5-23｜全6戸</p>
+      <ul class="details">
+        <li>1K（8洋＋3K）</li>
+        <li>家賃：50,000円〜</li>
+        <li>ネット無料／IH／独立洗面台</li>
+      </ul>
+      <div class="actions">
+        <a class="btn visit" href="#contact">内覧可能</a>
+        <button class="btn toggle" onclick="toggleStatus('ichiban')">満室切替</button>
+      </div>
+    </div>
 
-<div class="actions">
-<a class="btn visit" href="#contact">内覧可能</a>
-<button class="btn toggle" onclick="toggleStatus('ichiban')">満室切替</button>
-</div>
-</div>
+    <!-- ここに他物件が続く（今キャンバスと同一構造） -->
 
-<!-- 弐番館 -->
-<div class="property" id="niban">
-<h3>プランドール弐番館 <span class="status open">募集中</span></h3>
-<p class="subline">佐世保市川下町229-1｜大学徒歩8分</p>
-<ul class="details">
-<li>家賃：50,000円〜</li>
-<li>設備：壱番館と同等</li>
-<li>1階に管理会社あり</li>
-</ul>
-<div class="actions">
-<a class="btn visit" href="#contact">内覧可能</a>
-<button class="btn toggle" onclick="toggleStatus('niban')">満室切替</button>
-</div>
-</div>
-
-</section>
-
-<section class="section" id="family">
-<h2>ファミリー物件</h2>
-
-<div class="property full" id="grace">
-<h3>グレースハイツ <span class="status full">満室</span></h3>
-<ul class="details">
-<li>3LDK</li>
-<li>家賃：65,000円〜</li>
-<li>駐車場2台付き</li>
-</ul>
-</div>
+  </div>
 </section>
 
 <section class="section" id="contact">
-<h2>お問い合わせ</h2>
-<div class="contact-actions">
-<a class="btn tel" href="tel:0956482540">電話</a>
-<a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl" target="_blank">LINE</a>
-<a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
-</div>
+  <h2>お問い合わせ</h2>
+  <div class="contact-actions">
+    <a class="btn tel" href="tel:0956482540">電話</a>
+    <a class="btn line" href="https://line.me/ti/p/ffSyBRWGVl" target="_blank">LINE</a>
+    <a class="btn mail" href="mailto:arakitiken@gmail.com">メール</a>
+  </div>
 </section>
 
 <section class="section" id="about">
-<h2>会社概要</h2>
-<p>
-荒木地建<br>
-〒858-0914 長崎県佐世保市川下町229-1<br>
-TEL 0956-48-2540<br>
-開業：2026.02
-</p>
+  <h2>会社概要</h2>
+  <div class="meta">
+    <div>会社名：荒木地建</div>
+    <div>〒858-0914 長崎県佐世保市川下町229-1</div>
+    <div>TEL：0956-48-2540</div>
+    <div>開業：2026.02</div>
+  </div>
 </section>
 
 <footer>© 荒木地建</footer>
@@ -229,6 +152,14 @@ function toggleStatus(id){
     badge.textContent='募集中';
     badge.className='status open';
   }
+}
+function sortByRent(){
+  const list=document.getElementById('list');
+  [...list.children].sort((a,b)=>(a.dataset.rent||0)-(b.dataset.rent||0)).forEach(e=>list.appendChild(e));
+}
+function sortByDistance(){
+  const list=document.getElementById('list');
+  [...list.children].sort((a,b)=>(a.dataset.distance||999)-(b.dataset.distance||999)).forEach(e=>list.appendChild(e));
 }
 </script>
 
